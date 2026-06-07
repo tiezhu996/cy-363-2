@@ -18,9 +18,13 @@ body {
     #f9f0f2;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 .app-shell {
   min-height: 100vh;
-  background: transparent;
+  background: #f5f7fa;
 }
 
 .topbar {
@@ -28,10 +32,10 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: auto;
-  padding: 22px clamp(20px, 4vw, 56px);
-  background: color-mix(in srgb, #f9f0f2 86%, white 14%);
-  border-bottom: 1px solid color-mix(in srgb, #26181c 12%, transparent);
+  height: 64px;
+  padding: 0 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .brand-block {
@@ -48,15 +52,16 @@ body {
 
 .brand-title {
   margin: 0;
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(18px, 2vw, 24px);
   line-height: 1.06;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .workspace {
-  width: min(1180px, calc(100vw - 32px));
-  margin: 0 auto;
-  padding: clamp(24px, 5vw, 56px) 0 64px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 64px);
 }
 
 .lead-grid {
@@ -148,10 +153,28 @@ body {
   font-weight: 700;
 }
 
+.ant-layout-sider {
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.ant-layout-sider-dark {
+  background: linear-gradient(180deg, #001529 0%, #002140 100%);
+}
+
+.ant-menu-dark {
+  background: transparent;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background: rgba(24, 144, 255, 0.2);
+}
+
 @media (max-width: 860px) {
   .topbar {
     align-items: flex-start;
     flex-direction: column;
+    height: auto;
+    padding: 16px;
   }
 
   .lead-grid {
@@ -160,5 +183,9 @@ body {
 
   .metric-grid {
     grid-template-columns: 1fr;
+  }
+
+  .feature-strip {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
   }
 }
